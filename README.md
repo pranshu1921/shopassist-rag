@@ -17,7 +17,31 @@ An intelligent shopping assistant that answers customer questions by retrieving 
 pip install -r requirements.txt
 ```
 
+## Data Acquisition
+
+### Download Product and Review Data
+```bash
+python scripts/download_data.py
+```
+
+This will download:
+- 50K Amazon Electronics products
+- 100K customer reviews
+
+### Generate Store Policies
+```bash
+python scripts/generate_policies.py
+```
+
+This creates realistic e-commerce policies:
+- Return policy
+- Shipping policy  
+- Warranty information
+- Payment methods
+- FAQs
+
+
+
 ## Coming Soon
-- Data acquisition scripts
 - RAG implementation
 - Demo interface
