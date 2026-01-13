@@ -41,6 +41,19 @@ This creates realistic e-commerce policies:
 - FAQs
 
 
+## Data Processing
+
+After downloading raw data, process it into RAG-ready format:
+```bash
+python scripts/process_data.py
+```
+
+This will:
+- Parse product metadata and reviews
+- Chunk long documents
+- Create unified document format
+- Save to `data/processed/documents.json`
+
 
 ## Coming Soon
 - RAG implementation
