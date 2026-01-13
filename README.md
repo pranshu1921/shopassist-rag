@@ -130,6 +130,28 @@ python scripts/test_api.py
 ```
 
 
+## Demo Interface
+
+### Launch Streamlit App
+```bash
+streamlit run app.py
+```
+
+Or use the script:
+```bash
+bash scripts/start_app.sh
+```
+
+The app will open in your browser at `http://localhost:8501`
+
+### Features
+- 🔍 Interactive search interface
+- 📊 Real-time statistics
+- 📚 Source document display
+- 🎯 Filter by document type
+- 💡 Example queries
+
+
 
 ## Coming Soon
 - RAG implementation
