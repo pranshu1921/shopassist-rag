@@ -103,6 +103,33 @@ python src/rag_pipeline.py
 ```
 
 
+## API Usage
+
+### Start the API Server
+```bash
+python src/api.py
+```
+
+API will be available at `http://localhost:8000`
+- Swagger docs: `http://localhost:8000/docs`
+- ReDoc: `http://localhost:8000/redoc`
+
+### Example API Request
+```bash
+curl -X POST "http://localhost:8000/query" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "What is the best laptop for students?",
+    "return_sources": true
+  }'
+```
+
+### Test the API
+```bash
+python scripts/test_api.py
+```
+
+
 
 ## Coming Soon
 - RAG implementation
