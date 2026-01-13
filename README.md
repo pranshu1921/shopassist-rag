@@ -66,6 +66,22 @@ Required API keys:
 - OpenAI API key for embeddings and LLM
 
 
+## Building the Vector Store
+
+After processing data, build the vector store:
+```bash
+python scripts/build_vector_store.py
+```
+
+This will:
+- Load processed documents
+- Generate embeddings using OpenAI
+- Index documents in ChromaDB
+- Create persistent vector store
+
+**Note**: This step requires OpenAI API key and may take 10-15 minutes depending on dataset size.
+
+
 ## Coming Soon
 - RAG implementation
 - Demo interface
