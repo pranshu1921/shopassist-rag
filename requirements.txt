@@ -1,0 +1,27 @@
+# Core dependencies
+python-dotenv==1.0.0
+pyyaml==6.0.1
+
+# Data processing
+pandas==2.1.4
+numpy==1.26.2
+
+# LLM and embeddings
+langchain==0.1.0
+langchain-openai==0.0.2
+openai==1.6.1
+
+# Vector database
+chromadb==0.4.22
+
+# API and backend
+fastapi==0.109.0
+uvicorn==0.25.0
+pydantic==2.5.3
+
+# Frontend
+streamlit==1.29.0
+
+# Utilities
+requests==2.31.0
+tqdm==4.66.1

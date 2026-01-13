@@ -1,0 +1,34 @@
+# ShopAssist RAG Configuration
+
+# Data settings
+data:
+  products_limit: 50000
+  reviews_limit: 100000
+  chunk_size: 500
+  chunk_overlap: 50
+
+# Embedding settings
+embeddings:
+  model: "text-embedding-3-small"
+  dimension: 1536
+
+# LLM settings
+llm:
+  model: "gpt-3.5-turbo"
+  temperature: 0.1
+  max_tokens: 500
+
+# Vector DB settings
+vector_db:
+  collection_name: "shopassist"
+  persist_directory: "./chroma_db"
+
+# API settings
+api:
+  host: "0.0.0.0"
+  port: 8000
+
+# Retrieval settings
+retrieval:
+  top_k: 5
+  search_type: "similarity"
