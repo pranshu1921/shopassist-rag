@@ -54,6 +54,17 @@ This will:
 - Create unified document format
 - Save to `data/processed/documents.json`
 
+## Environment Setup
+
+Create a `.env` file with your OpenAI API key:
+```bash
+cp .env.example .env
+# Edit .env and add your OpenAI API key
+```
+
+Required API keys:
+- OpenAI API key for embeddings and LLM
+
 
 ## Coming Soon
 - RAG implementation
