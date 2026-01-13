@@ -81,6 +81,28 @@ This will:
 
 **Note**: This step requires OpenAI API key and may take 10-15 minutes depending on dataset size.
 
+## Usage
+
+### Python API
+```python
+from src.rag_pipeline import RAGPipeline
+
+# Initialize pipeline
+pipeline = RAGPipeline()
+
+# Ask a question
+result = pipeline.query("What's the best laptop for students?")
+
+print(result['answer'])
+print(f"Based on {result['num_sources']} sources")
+```
+
+### Test Queries
+```bash
+python src/rag_pipeline.py
+```
+
+
 
 ## Coming Soon
 - RAG implementation
