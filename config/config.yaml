@@ -32,3 +32,9 @@ api:
 retrieval:
   top_k: 5
   search_type: "similarity"
+
+# Cache settings
+cache:
+  enabled: true
+  ttl_hours: 24
+  cache_directory: ".cache"

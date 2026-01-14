@@ -184,6 +184,38 @@ See `tests/sample_queries.md` for 50+ test queries organized by:
 - Complex/edge cases
 
 
+## Performance Optimization
+
+### Caching
+
+Response caching is enabled by default with 24-hour TTL:
+```python
+from src.rag_pipeline_cached import CachedRAGPipeline
+
+pipeline = CachedRAGPipeline(enable_cache=True)
+result = pipeline.query("your question")
+
+# Check if from cache
+print(f"From cache: {result['from_cache']}")
+print(f"Latency: {result['latency_ms']}ms")
+```
+
+### Benchmark Performance
+```bash
+python scripts/benchmark.py
+```
+
+**Expected Performance:**
+- First query (cache miss): 1500-3000ms
+- Cached query (cache hit): <10ms
+- Cache hit rate: 60-80% in typical usage
+
+### Clear Cache
+```python
+pipeline.clear_cache()
+```
+
+
 ## Coming Soon
 - RAG implementation
 - Demo interface
