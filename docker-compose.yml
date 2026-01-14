@@ -1,0 +1,93 @@
+version: '3.8'
+
+services:
+  shopassist-api:
+    build: .
+    container_name: shopassist-api
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - ./data:/app/data
+      - ./chroma_db:/app/chroma_db
+      - ./.cache:/app/.cache
+      - ./logs:/app/logs
+    command: python src/api.py
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  shopassist-ui:
+    build: .
+    container_name: shopassist-ui
+    ports:
+      - "8501:8501"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - ./data:/app/data
+      - ./chroma_db:/app/chroma_db
+      - ./.cache:/app/.cache
+    command: streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+    restart: unless-stopped
+    depends_on:
+      - shopassist-api
+
+volumes:
+  data:
+  chroma_db:
+  cache:
+  logs:
+```
+
+### **File: `.dockerignore`**
+```
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+
+# Data (large files, build separately)
+data/raw/*.json
+data/raw/*.gz
+data/processed/*.json
+
+# Vector DB (build separately)
+chroma_db/
+
+# Cache
+.cache/
+*.log
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Docs
+docs/
+*.md
+!README.md
+
+# Tests
+tests/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db

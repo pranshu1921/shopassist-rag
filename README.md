@@ -161,6 +161,34 @@ python scripts/benchmark.py
 python scripts/test_api.py
 ```
 
+
+## 🐳 Docker Deployment
+
+### Quick Start
+```bash
+# One-time setup
+bash scripts/docker_setup.sh
+
+# Start services
+docker-compose up -d
+
+# Access application
+# API:  http://localhost:8000
+# UI:   http://localhost:8501
+# Docs: http://localhost:8000/docs
+```
+
+### Using Makefile
+```bash
+make docker-build   # Build image
+make docker-up      # Start services
+make docker-logs    # View logs
+make docker-down    # Stop services
+```
+
+See [Docker Guide](docs/DOCKER.md) for detailed instructions.
+
+
 ## 📁 Project Structure
 ```
 shopassist-rag/
