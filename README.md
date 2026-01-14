@@ -152,6 +152,37 @@ The app will open in your browser at `http://localhost:8501`
 - 💡 Example queries
 
 
+## Testing & Evaluation
+
+### Run Evaluation Suite
+
+Test the RAG system with predefined queries:
+```bash
+python tests/test_queries.py
+```
+
+This will:
+- Test 15+ sample queries across different categories
+- Measure response latency
+- Check retrieval quality
+- Generate evaluation report
+
+### Evaluation Metrics
+
+- **Latency**: Response time per query
+- **Retrieval Quality**: Relevant document types in top results
+- **Success Rate**: Percentage of queries with expected doc types
+- **Coverage**: Categories tested (product search, reviews, policies)
+
+### Sample Queries
+
+See `tests/sample_queries.md` for 50+ test queries organized by:
+- Product search (budget, features, use case)
+- Review analysis (sentiment, features, reliability)
+- Policy questions (returns, shipping, warranty)
+- Comparisons
+- Complex/edge cases
+
 
 ## Coming Soon
 - RAG implementation
